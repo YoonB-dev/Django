@@ -43,9 +43,7 @@ def create_question(question_text, days):
     
 class QuestionIndexViewTests(TestCase):
     def test_no_questions(self):
-        """
-        질문이 비어있는지 확인
-        """
+
         response = self.client.get(reverse("polls:index"))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "No polls are available.")
